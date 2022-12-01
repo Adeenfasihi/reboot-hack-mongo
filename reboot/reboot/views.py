@@ -17,34 +17,83 @@ collection_name = dbname["SME"]
 
 #let's create two documents
 sme_1 = {
+    "Id" : 0x00,
     "Name": "Woodpecker",
     "Email" : "peckingLord@nest.com",
     "Password" : "penglings",
     "Post Code" : "BG12 32",
     "Industry": "Furniture",
-    "Sector": "Woodwork"
+    "Sector": "Woodwork",
+    "Network": ""
 }
 sme_2 = {
+    "Id": 0x01,
     "Name": "Nirala Sweets",
     "Email" : "sweet@sweeter.sweetest",
     "Password" : "fooood",
     "Post Code" : "Ab12 32",
     "Industry": "Food",
-    "Sector": "Catering"
+    "Sector": "Catering",
+    "Network": "Sugar Cubez,A Onion"
+}
+
+sme_3 = {
+    "Id": 0x02,
+    "Name": "Sugar Cubez",
+    "Email" : "sugar@SuarCubers.com",
+    "Password" : "YUM",
+    "Post Code" : "NM24 64",
+    "Industry": "Food",
+    "Sector": "Catering",
+    "Network": "Nirala Sweets,A Onion"
+}
+
+sme_4 = {
+    "Id": 0x03,
+    "Name": "A ONION",
+    "Email" : "A@onion.com",
+    "Password" : "OP_Onion",
+    "Post Code" : "KL23 56",
+    "Industry": "Food",
+    "Sector": "Catering",
+    "Network": "Sugar Cubez,Nirala Sweets"
+
+}
+
+sme_5 = {
+    "Id": 0x04,
+    "Name": "Real Steel",
+    "Email" : "steel@seelt",
+    "Password" : "fire",
+    "Post Code" : "lm12 32",
+    "Industry": "Raw Materials",
+    "Sector": "Metals",
+    "Network": "Marble Works"
+}
+
+sme_6 = {
+    "Id": 0x05,
+    "Name": "Marble Works",
+    "Email" : "marblez@fishy.com",
+    "Password" : "stone",
+    "Post Code" : "pb12 32",
+    "Industry": "Raw Materials",
+    "Sector": "Metals",
+    "Network": "Real Steel"
 }
 
 
 
-collection_name.insert_many([medicine_1,medicine_2])
+collection_name.insert_many([sme_1, sme_2,sme_3, sme_4,sme_5, sme_6])
 
 med_details = collection_name.find({})
 
 for r in med_details:
 	print(r["common_name"])
 
-update_data = collection_name.update_one({'medicine_id':'RR000123456'}, {'$set':{'common_name':'Paracetamol 500'}})
+# update_data = collection_name.update_one({'medicine_id':'RR000123456'}, {'$set':{'common_name':'Paracetamol 500'}})
 
 count = collection_name.count()
 print(count)
 
-delete_data = collection_name.delete_one({'medicine_id':'RR000123456'})
+# delete_data = collection_name.delete_one({'medicine_id':'RR000123456'})

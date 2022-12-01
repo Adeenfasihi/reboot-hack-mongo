@@ -7,3 +7,4 @@ class SME(models.Model):
     sme_postcode = models.CharField(max_length=8)
     sme_industry = models.CharField(max_length=25)
     sme_sector = models.CharField(max_length=25)
+
