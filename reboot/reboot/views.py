@@ -35,7 +35,7 @@ sme_2 = {
 
 
 
-collection_name.insert_many([medicine_1,medicine_2])
+collection_name.insert_many([])
 
 med_details = collection_name.find({})
 
